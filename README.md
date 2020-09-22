@@ -1,4 +1,4 @@
-acme-dns-client
+ACME DNS Client
 ===============
 
 ACME (Let's Encrypt) client for issuing SSL/TLS certificate through DNS validation.
