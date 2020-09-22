@@ -1,0 +1,21 @@
+[package]
+name = "acme-dns-client"
+version = "0.1.0"
+description = "ACME (Let's Encrypt) client for issuing (wildcard) SSL/TLS certificate through DNS validation"
+license = "MIT"
+authors = ["Shazz Amin <me@shazz.me>"]
+repository = "https://github.com/ShazzAmin/acme-dns-client"
+readme = "README.md"
+keywords = ["acme", "letsencrypt"]
+categories = ["command-line-utilities", "cryptography", "authentication"]
+edition = "2018"
+
+[dependencies]
+packed_struct = "0.3"
+packed_struct_codegen = "0.3"
+openssl = { version = "0.10", features = ["vendored"] }
+acme-lib = "0.8"
+clap = "3.0.0-beta.2"
+
+[profile.release]
+lto = true
