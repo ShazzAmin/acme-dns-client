@@ -12,7 +12,7 @@ Fortunately, with a particular set of resource records that you pre-configure wi
 
 
 ## Installation
-Download the binary from GitHub by running `wget <release url>`.
+Download the binary from GitHub by running `wget https://github.com/ShazzAmin/acme-dns-client/releases/download/v0.1.0/acme-dns-client`.
 
 Alternatively, you can build from source by cloning this repository and running `cargo build --release`.
 
