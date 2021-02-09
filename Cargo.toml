@@ -1,6 +1,6 @@
 [package]
 name = "acme-dns-client"
-version = "0.1.0"
+version = "0.2.0"
 description = "ACME (Let's Encrypt) client for issuing (wildcard) SSL/TLS certificate through DNS validation"
 license = "MIT"
 authors = ["Shazz Amin <me@shazz.me>"]
