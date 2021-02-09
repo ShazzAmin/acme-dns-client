@@ -1,10 +1,11 @@
 #[macro_use] extern crate packed_struct_codegen;
 
 mod dns;
+mod persist;
 
 use acme_lib::{Directory, DirectoryUrl, create_p384_key};
-use acme_lib::persist::FilePersist;
 use clap::{Arg, App};
+use persist::FilePersist;
 
 fn main() {
     let args = App::new("ACME DNS Client")
@@ -43,7 +44,6 @@ fn main() {
     let email = args.value_of("email").unwrap();
     let output_directory = args.value_of("output").unwrap();
 
-
     println!("Ordering certificate for {} using email {} from Let's Encrypt{}...",
               domain,
               email,
@@ -51,7 +51,7 @@ fn main() {
 
     let url = if staging { DirectoryUrl::LetsEncryptStaging } else { DirectoryUrl::LetsEncrypt };
 
-    let mut order = Directory::from_url(FilePersist::new(output_directory), url).unwrap()
+    let mut order = Directory::from_url(FilePersist::new(output_directory, domain), url).unwrap()
                      .account(email).unwrap()
                      .new_order(domain, &[]).unwrap();
 
